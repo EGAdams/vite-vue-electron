@@ -2,7 +2,7 @@
   <h1>{{ msg }}</h1>
 
   <button type="button" @click="count++">
-    this still works! the exact count is: {{ count }}
+    this still works! the count is: {{ count }}
   </button>
 
 </template>

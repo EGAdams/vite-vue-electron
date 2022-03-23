@@ -12,7 +12,7 @@ function createWindow() {
         },
     });
 
-    mainWindow.loadURL( isDev ? 'http://localhost:3000' : `file://${path.join( __dirname, '../dist/index.html' )}` );
+    mainWindow.loadURL( isDev ? 'http://localhost:3000' : `file://${ path.join( __dirname, '../dist/index.html' )}` );
 
     if ( isDev ) { mainWindow.webContents.openDevTools(); }
 }
