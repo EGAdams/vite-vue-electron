@@ -1,7 +1,9 @@
 <template>
   <h1>{{ msg }}</h1>
 
-  <button type="button" @click="count++">this still works! the exact count is: {{ count }}</button>
+  <button type="button" @click="count++">
+    this still works! the exact count is: {{ count }}
+  </button>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
@@ -9,20 +11,20 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
+import { ref, defineComponent } from "vue";
 export default defineComponent({
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
     msg: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   setup: () => {
-    const count = ref(0)
-    return { count }
-  }
-})
+    const count = ref( 0 );
+    return { count };
+  },
+});
 </script>
 
 <style scoped>
