@@ -1,7 +1,6 @@
 import ITestable from '../../abstract/ITestable';
 import IQueryRunner from "../../abstract/data/IQueryRunner";
 import axios from "axios";
-import AxiosPacketFactory from './AxiosPacketFactory';
 import JewelryMachineQueryRunnerTest from "../../test/data/JewelryMachineQueryRunnerTest";
 import IApiArgs from "../../abstract/data/IApiArgs";
 
@@ -23,13 +22,10 @@ import IApiArgs from "../../abstract/data/IApiArgs";
  * @implements {ITestable}
  */
 export default class JewelryMachineQueryRunner implements IQueryRunner, ITestable {
-    axiosPacketFactory: AxiosPacketFactory;
     url = "http://americansjewelry.com/test2/runQuery.php";
 
     constructor() {
-        console.log( 'constructing JewelryMachineQueryRunner object...' );
-        this.axiosPacketFactory = new AxiosPacketFactory();
-    }
+        console.log( 'constructing JewelryMachineQueryRunner object...' ); }
 
     /**
      *

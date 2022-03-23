@@ -1,7 +1,7 @@
 <template>
   <h1>{{ msg }}</h1>
 
-  <button type="button" @click="count++">the exact count is: {{ count }}</button>
+  <button type="button" @click="count++">this works! the exact count is: {{ count }}</button>
   <p>
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
