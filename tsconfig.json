@@ -3,7 +3,7 @@
     "outDir": "./out",
     "rootDir": "./src",
     "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",

@@ -17,7 +17,7 @@ Since TypeScript cannot handle type information for `.vue` imports,
 *** WTF does this mean !!!! ***
 they are shimmed to be a generic Vue component type by default. 
 
-just doesn't make any sense.
+just doesn't make any sense.  shimmed?
 
 
 In most cases this is fine if you don't really care about component prop types outside of templates. 

@@ -1,7 +1,4 @@
 import IQueryResultProcessor from "../../abstract/data/IQueryResultProcessor";
-import JewelryMachineQueryRunner from './JewelryMachineQueryRunner';
-import IApiArgs from '../../abstract/data/IApiArgs';
-import DataPacketVerifier from './DataPacketVerifier';
 
 /**
  * @description
@@ -17,15 +14,8 @@ export default class QueryInsertProcessor implements IQueryResultProcessor {
     constructor() { console.log( 'constructing QueryInsertProcessor object...' ); }
     processQueryResult( queryResult: any ): void {
         console.log( "processing query result..." );
-        console.log( "queryResult: " + queryResult );
+        console.log( "queryResult.data: " + queryResult.data );
         console.log( "checking table for inserted object..." );
-        // verify object existence
-        const queryRunner = new JewelryMachineQueryRunner();
-        const apiArgs: IApiArgs = {
-            data: undefined,
-            queryResultProcessor: new DataPacketVerifier(),
-            query: "select * from monitored_objects where object_view_id='test_id_0'"
-        };
-        console.log( "running query: " + apiArgs.query + "..." );
-        queryRunner.runQuery( apiArgs ); }
+        console.log( "Done processing query result." ); }
+        
 }
