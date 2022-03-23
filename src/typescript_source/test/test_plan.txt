@@ -1,0 +1,21 @@
+#
+# the objects listed below must have a testMe() method.
+#
+#FileManager
+#ArrayPopulator
+#Regex
+#AlertPopulator
+#Socket
+#BlotterPopulator
+#ClientFactory
+#RulesPopulator
+#DataObject
+#DiffOutputProcessor
+#UnixDiffCommand
+#CommandExecutor
+#LsOutputProcessor
+#AlertOutputProcessor
+#ConditionsPopulator
+#ServerRunningOutputProcessor
+#ObjectsViewUpdater
+CheckCommandManagerOutputProcessor
