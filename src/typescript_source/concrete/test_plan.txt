@@ -19,4 +19,5 @@
 #ServerRunningOutputProcessor
 #ObjectsViewUpdater
 #CheckCommandManagerOutputProcessor
-JewelryMachineQueryRunner
+#JewelryMachineQueryRunner
+LogObjectProcessorTest

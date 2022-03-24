@@ -2,15 +2,16 @@ import IPopulator from "../abstract/IPopulator";
 import FileManager from "./FileManager";
 import INameRegexPair from "../abstract/INameRegexPair";
 import IRawRegexStringPair from "../abstract/IRawRegexStringPair";
-/*
- *  Regex class
- *
+/**
+ * @description 
  *  this object is used to find any string of interest in an array of strings.
  *  it was originally designed to pull a list of targeted regular expresions
  *  for processing HUGE, browser crashing log files.  I was working on a java
  *  version of this before they hauled me out of FPL like a criminal in 2016.
  *  That's when they stole my monitoring ideas and left me on the streets.
  *  been homeless ever since...
+ * 
+ * @class Regex
  */
 class Regex {
     regexClip: Array<IRawRegexStringPair> = [];
@@ -30,6 +31,13 @@ class Regex {
         }
     }
 
+    /**
+     *
+     * @method fillClip
+     * @private
+     * @param {string[]} raw_regex_source_file_array
+     * @memberof Regex
+     */
     private fillClip ( raw_regex_source_file_array: string[] ): void {
         for ( const line in raw_regex_source_file_array ) {
             if ( raw_regex_source_file_array[ line ].includes( "<--*-->" ) ) {

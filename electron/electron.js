@@ -1,6 +1,5 @@
 const path = require( 'path' );
 const { app, BrowserWindow } = require( 'electron' );
-
 const isDev = process.env.IS_DEV == "true" ? true : false;
 
 function createWindow() {
@@ -11,9 +10,7 @@ function createWindow() {
             nodeIntegration: true,
         },
     });
-
     mainWindow.loadURL( isDev ? 'http://localhost:3000' : `file://${ path.join( __dirname, '../dist/index.html' )}` );
-
     if ( isDev ) { mainWindow.webContents.openDevTools(); }
 }
 
@@ -25,8 +22,7 @@ app.whenReady().then( () => {
     app.on( 'activate', function() {
         // On macOS it's common to re-create a window in the app when the
         // dock icon is clicked and there are no other windows open.
-        if ( BrowserWindow.getAllWindows().length === 0 ) createWindow() });
-});
+        if ( BrowserWindow.getAllWindows().length === 0 ) createWindow() }); });
 
 app.on( 'window-all-closed', () => {
     if ( process.platform !== 'darwin' ) {  // if it's not a MAC...

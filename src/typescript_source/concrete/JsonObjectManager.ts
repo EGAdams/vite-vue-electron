@@ -28,10 +28,7 @@ class JsonObjectManager {
   /*
    * meat
    */
-  isInArray(
-    jsonObjectToSearchFor: IObjectView,
-    arrayToSearch: Array<IObjectView>
-  ): boolean {
+  isInArray( jsonObjectToSearchFor: IObjectView, arrayToSearch: Array<IObjectView>  ): boolean {
     const name_to_search_for = jsonObjectToSearchFor["properties"][0].value;
     const matched_objects = arrayToSearch.filter(
       (jsonObject) => jsonObject["properties"][0].value == name_to_search_for

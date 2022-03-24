@@ -25,8 +25,8 @@
 		"hardwrap" : true
 	},
 	"tsdoc":{
-		"source"		:"/Users/EG/Desktop/2022/march/3_week/pkief_debug_article/src/typescript_source/",
-		"destination"	:"/Users/EG/Desktop/2022/march/3_week/pkief_debug_article/src/typescript_source/docs",
+		"source"		:"./",
+		"destination"	:"./docs/",
 		"tutorials"		:"",
 		"systemName"	: "typescript_source",
 		"footer"		: "",

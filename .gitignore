@@ -7,3 +7,5 @@ dist-ssr
 dist_electron
 out/
 src/typescript_source/concrete/config/
+src/typescript_source/docs/
+src/typescript_source/scripts/

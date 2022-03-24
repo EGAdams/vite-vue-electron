@@ -12,8 +12,8 @@ class Tester {
     start(): void {
         this.testableObjects.forEach( async specimen => {
             if ( specimen.length != 0 && !specimen.match( /^#/ )) {
-                const Subject = await import( "./data/" + specimen );
-                const subject = new Subject();
+                const Subject = await import( "../test/" + specimen );
+                const subject = new Subject.default();
                 console.log( "\nbegin " + specimen + " test..." );
                 subject.testMe();
                 console.log( "end " + specimen + " test.\n" );
@@ -23,7 +23,7 @@ class Tester {
 }
 
 const fileManager = new FileManager();
-const testableObjects = fileManager.populateArray( "../../test/test_plan.txt" );
+const testableObjects = fileManager.populateArray( "C:\\Users\\EG\\Desktop\\2022\\march\\4th_week\\wed\\vite-vue-electron\\src\\typescript_source\\test\\test_plan.txt" );
 const tester = new Tester(testableObjects);
 tester.start();
 console.log( "end testing testable objects." );

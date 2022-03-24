@@ -35,8 +35,7 @@ export default defineComponent({
           return;
         }
         jQuery("#" + this.object_name + "_log_viewer").html(value);
-        var height = jQuery(".screen-area").prop("scrollHeight") * 10; // TODO: this isnt right.
-        console.log(height);
+        var height = jQuery(".screen-area").prop("scrollHeight");
         jQuery(".screen-area").animate({ scrollTop: height }, 2000);
       },
       immediate: true, // This ensures the watcher is triggered upon creation

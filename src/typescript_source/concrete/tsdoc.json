@@ -25,8 +25,8 @@
 		"hardwrap" : true
 	},
 	"tsdoc":{
-		"source"		:"/Users/EG/Desktop/2022/march/3_week/pkief_debug_article/src/typescript_source/concrete/src/",
-		"destination"	:"/Users/EG/Desktop/2022/march/3_week/pkief_debug_article/src/typescript_source/concrete/docs",
+		"source"		:"./src/typescript_source/",
+		"destination"	:"./src/typescript_source/docs",
 		"tutorials"		:"",
 		"systemName"	: "concrete",
 		"footer"		: "",
