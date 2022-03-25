@@ -5,6 +5,7 @@
   "main": "electron/electron.js",
   "scripts": {
     "compile_typescript": "tsc",
+    "watch_and_compile_typescript": "tsc --watch",
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview",
@@ -16,6 +17,9 @@
     "app:build": "yarn build:for:electron && yarn electron:builder"
   },
   "dependencies": {
+    "@types/mocha": "^9.1.0",
+    "@vue/test-utils": "^2.0.0-rc.17",
+    "chai": "^4.3.6",
     "mysql": "^2.18.1",
     "vue": "^3.0.5",
     "vue-router": "^4.0.14"
