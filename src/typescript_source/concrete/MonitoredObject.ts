@@ -2,7 +2,7 @@ import ISubject from '../abstract/ISubject';
 import ITestable from '../abstract/ITestable';
 import ObserverFactory from './ObserverFactory';
 import IObserver from '../abstract/IObserver';
-import FreshTools from '../concrete/FreshToolBox';
+import FreshToolBox from '../concrete/FreshToolBox';
 /**
  *  @class MonitoredObject
  * 
@@ -24,7 +24,6 @@ import FreshTools from '../concrete/FreshToolBox';
 export default class MonitoredObject implements ISubject, ITestable {
     private observerFactory  = new ObserverFactory();
     public observers         = new Array< IObserver >();
-    private tools            = new FreshTools();
 
     constructor() { 
         console.log( "creating a monitored object observer..." );
@@ -35,7 +34,7 @@ export default class MonitoredObject implements ISubject, ITestable {
         this.observers.push( observer ); }
 
     detatch( observer: IObserver ): void { 
-        this.tools.removeSpecificObjectFromArray( observer, this.observers ); }
+        FreshToolBox.removeSpecificObjectFromArray( observer, this.observers ); }
     
     notify(): void {
         console.log( "calling update() for each observer..." );

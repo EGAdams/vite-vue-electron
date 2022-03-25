@@ -1,41 +1,35 @@
-import IObserver from "../abstract/IObserver";
 /**
  *  @class FreshToolBox
  * 
  *  @description
- *  
- *  Trying to reduce clutter by putting re-useable tools in here.  Currently
- *  has methods to remove a specific object from an array of Observers and a 
- *  method to capitalize the first letter of a string.
+ *  tools that I frequently use.
  * 
  */
 export default class FreshToolBox {
-
     constructor() { console.log( "contructing fresh tool box..." ); }
-
-    /*
-     *  spent over an hour today trying to do this in typescript.  put this dam thing somewhere safe.
-     *  ***uk it.. disabled eslint for line 16
+    /**
+     * @method removeObjectFromArray
+     * @description
+     * removes an object from an array of any type of objects.
+     *
+     * @param {unknown} objectToRemove
+     * @param {Array< unknown >} arrayToRemoveItFrom
+     * @return {*}  {Array< unknown >}
+     * @memberof FreshToolBox
      */
-    public removeSpecificObjectFromArray ( ObjectToRemove: IObserver, arrayToRemoveItFrom: Array<unknown> ): Array<unknown> {
-
-        // find index in your array
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const index = arrayToRemoveItFrom.findIndex( objectInthisArray => ( objectInthisArray as any ) === ObjectToRemove );
-        if ( index ) {
-            return arrayToRemoveItFrom.splice( index, 1 ); //remove element from array
-        } else {
-            console.log( "*** WARNING: trying to remove an object from an array that doesn't exist in the array ***" );
-            return arrayToRemoveItFrom;
-        }
-    }
-
+    static removeSpecificObjectFromArray ( objectToRemove: unknown, arrayToRemoveItFrom: Array< unknown > ): void {
+        arrayToRemoveItFrom.splice( arrayToRemoveItFrom.indexOf( objectToRemove ), 1 ); }
+    
     static capitalizeFirstLetter ( stringToUppercase: string ): string {
-        return stringToUppercase.charAt( 0 ).toUpperCase() + stringToUppercase.slice( 1 );
-    }
+        return stringToUppercase.charAt( 0 ).toUpperCase() + stringToUppercase.slice( 1 ); }
 
     static isInArray ( objectToSearchFor: any, arrayToSearch: Array< any > ): boolean {
-        const object_id = objectToSearchFor[ "id" ].value;
+        const object_id = objectToSearchFor[ "id" ];
         const matched_objects = arrayToSearch.filter(( object ) => object[ "id" ].value == object_id );
         return matched_objects.length > 0 ? true : false; }
+    
+    static assert( condition: any, msg?: string ): asserts condition {
+        if ( !condition ) {
+            throw new Error( msg )
+        }}
 }

@@ -24,7 +24,7 @@ class Tester {
 
 const fileManager = new FileManager();
 const testableObjects = fileManager.populateArray( "C:\\Users\\EG\\Desktop\\2022\\march\\4th_week\\wed\\vite-vue-electron\\src\\typescript_source\\test\\test_plan.txt" );
-const tester = new Tester(testableObjects);
+const tester = new Tester( testableObjects );
 tester.start();
 console.log( "end testing testable objects." );
 

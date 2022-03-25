@@ -13,6 +13,9 @@ export default class LogObjectContainer {
     
     addLog( logToAdd: ILogObject ): void {
         if ( !FreshToolBox.isInArray( logToAdd, this.logObjects )) {
-            this.logObjects.push( logToAdd ); }}    
+            this.logObjects.push( logToAdd ); }}
+            
+    getLogObjects(): Array< ILogObject > {
+        return this.logObjects; }
     
 }

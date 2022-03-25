@@ -4,7 +4,6 @@ import LogObjectContainer from "./LogObjectContainer";
 /**
  * @description
  * 
- * 
  * @class LogObjectProcessor
  * @implements {I}
  */
@@ -16,12 +15,21 @@ export default class LogObjectProcessor  {
     constructor( logObjectContainerArg: LogObjectContainer ) {
         console.log( 'constructing LogObjectProcessor object...' ); 
         this.logObjectContainer = logObjectContainerArg; }
+
+    updateQue() {
+        console.log( 'updating que...' );
+        const freshData = this.logObjectContainer.getLogObjects(); 
+        for ( const logObject in freshData ) {
+            this.addLog( freshData[ logObject ]); }}    
     
     addLog( logToAdd: ILogObject ): void {
-        if ( !FreshToolBox.isInArray( logToAdd, this.unwrittenLogs )) {
+        if ( !FreshToolBox.isInArray( logToAdd, this.writtenLogs )) {
             this.unwrittenLogs.push( logToAdd ); }}
 
     processLogObjects(): void { 
         console.log( 'processing log objects...' );
-    }    
+        for ( const logObject in this.unwrittenLogs ) {
+            console.log( "processing log with id: " + this.unwrittenLogs[ logObject ].id + "..." );
+            this.writtenLogs.push( this.unwrittenLogs[ logObject ]); }
+        this.unwrittenLogs = []; }    
 }
