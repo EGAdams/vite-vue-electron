@@ -44,7 +44,6 @@ export default defineComponent({
         startTest() {
             this.processor_test.testMe();
             this.logs = this.processor_test.writtenLogs;
-            alert( "done" );  
         },
     },
 });

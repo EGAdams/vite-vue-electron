@@ -24,9 +24,7 @@ export default class FreshToolBox {
         return stringToUppercase.charAt( 0 ).toUpperCase() + stringToUppercase.slice( 1 ); }
 
     static isInArray ( objectToSearchFor: any, arrayToSearch: Array< any > ): boolean {
-        const object_id = objectToSearchFor[ "id" ];
-        const matched_objects = arrayToSearch.filter(( object ) => object[ "id" ].value == object_id );
-        return matched_objects.length > 0 ? true : false; }
+        return( arrayToSearch.indexOf( objectToSearchFor ) > -1 ); }
     
     static assert( condition: any, msg?: string ): asserts condition {
         if ( !condition ) {

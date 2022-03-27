@@ -1,9 +1,12 @@
 import ILogObject from '../typescript_source/abstract/ILogObject';
 <template>
     <li>
-        <div class="grid-container">
+        <div class="log-object-container">
             <div>
                 {{ log_object.method }}
+            </div>
+            <div>
+                {{ log_object.id }}
             </div>
             <div>
                 {{ log_object.message }}
@@ -26,4 +29,18 @@ export default defineComponent({
 });
 </script>
 
-<style></style>
+<style>
+.log-object-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.1px;
+    border: solid 0.0px;
+    margin-bottom: 3px;
+}
+li { 
+    list-style: none;
+}
+
+</style>

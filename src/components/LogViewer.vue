@@ -2,7 +2,7 @@
  /*
   * Log Viewer component */ -->
 <template>
-    <div class="screen-area">
+    <div :id="object_name + '_log_viewer'" class="screen-area">
         <h1>{{ object_name }}</h1>
         <ol>
             <log-object
@@ -18,6 +18,7 @@
 import { defineComponent, PropType } from 'vue';
 import LogObject from '../components/LogObject.vue';
 import ILogObject from '../typescript_source/abstract/ILogObject';
+import jQuery from 'jquery';
 export default defineComponent({
     name: 'log_viewer',
     components: {
@@ -30,8 +31,13 @@ export default defineComponent({
     watch: {
         logs: {
             handler(newValue) {
-                console.log( "logs changed.  emitting logs-changed..." );
-                this.$emit('logs-changed', newValue);
+                var height = jQuery( "#" + this.object_name  + "_log_viewer" ).prop( "scrollHeight" );  // TODO: somethings not right here
+                console.log( "height: " + height );
+                // jQuery( "#" + this.object_name  + "_log_viewer" ).animate(
+                //     { scrollTop: height },
+                //     2000
+                // );
+                jQuery( "#" + this.object_name  + "_log_viewer" ).scrollTop( height );
             }}}    
 });
 </script>
