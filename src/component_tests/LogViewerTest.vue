@@ -1,14 +1,10 @@
-<!--
- /*
-  * Log Viewer component test
-  */ 
--->
+<!-- Log Viewer component test -->
 <template>
   <!-- the v-html xlates raw html -->
   <log-viewer
-    v-bind:object_name="object_name"
+    v-bind:object_name="test_object_name"
     v-bind:screen_html="screen_html"
-    v-bind:logs="processor_test.writtenLogs"
+    v-bind:logs="logs"
   ></log-viewer>
   <button @click="startTest">
       Start Test
@@ -18,6 +14,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import LogViewer from "../components/LogViewer.vue";
+import ILogObject from "../typescript_source/abstract/ILogObject";
 import LogObjectProcessorTest from "../typescript_source/test/LogObjectProcessorTest";
 export default defineComponent({
     name: "LogViewerTest",
@@ -27,14 +24,26 @@ export default defineComponent({
     props: {},
     data() {
         return {
-        object_name: "",
-        screen_html: "ready.",
-        processor_test: new LogObjectProcessorTest(),
+            test_object_name: "tester",
+            screen_html: "ready.",
+            processor_test: new LogObjectProcessorTest(),
+            logs: [{
+                    id: "1",
+                    timestamp: 100,
+                    message: "test message 1",
+                    method: "test",
+            }, {
+                    id: "2",
+                    timestamp: 100,
+                    message: "test message 2",
+                    method: "test",
+            }],
         };
     },
     methods: {
         startTest() {
             this.processor_test.testMe();
+            // this.logs = this.processor_test.writtenLogs;
             alert( "done" );  
         },
     },

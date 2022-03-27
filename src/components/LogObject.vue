@@ -3,10 +3,10 @@ import ILogObject from '../typescript_source/abstract/ILogObject';
     <li>
         <div class="grid-container">
             <div>
-                {{ log.method }}
+                {{ log_object.method }}
             </div>
             <div>
-                {{ log.message }}
+                {{ log_object.message }}
             </div>
         </div>
     </li>
@@ -16,10 +16,10 @@ import ILogObject from '../typescript_source/abstract/ILogObject';
 import { defineComponent, PropType } from "vue";
 import ILogObject from "../typescript_source/abstract/ILogObject";
 export default defineComponent({
-    name: "log",
+    name: "log_object",
     props: {
         // log: Object as PropType< ILogObject > 
-        log: { 
+        log_object: { 
             type: Object as PropType< ILogObject >,
             default: {},
         }
