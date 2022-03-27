@@ -18,7 +18,6 @@ import ILogObject from "../typescript_source/abstract/ILogObject";
 export default defineComponent({
     name: "log_object",
     props: {
-        // log: Object as PropType< ILogObject > 
         log_object: { 
             type: Object as PropType< ILogObject >,
             default: {},

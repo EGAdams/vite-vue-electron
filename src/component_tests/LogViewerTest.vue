@@ -43,7 +43,7 @@ export default defineComponent({
     methods: {
         startTest() {
             this.processor_test.testMe();
-            // this.logs = this.processor_test.writtenLogs;
+            this.logs = this.processor_test.writtenLogs;
             alert( "done" );  
         },
     },

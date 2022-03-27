@@ -30,11 +30,9 @@ export default defineComponent({
     watch: {
         logs: {
             handler(newValue) {
+                console.log( "logs changed.  emitting logs-changed..." );
                 this.$emit('logs-changed', newValue);
-                //alert( "logs changed" );
-            }
-        }
-    }    
+            }}}    
 });
 </script>
 
