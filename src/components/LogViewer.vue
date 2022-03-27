@@ -1,47 +1,33 @@
 <!--
  /*
-  * Log Viewer component
-  */ 
--->
+  * Log Viewer component */ -->
 <template>
-  <!-- the v-html xlates raw html -->
-  <div class="screen-area">
-    <div :id="object_name + '_log_viewer'">
-      <span v-html="screen_html"></span>
+    <div class="screen-area">
+        <ol>
+            <log
+                v-for="log in logs"
+                v-bind:log="log"
+                v-bind:key="log.id">
+            </log>
+        </ol>
     </div>
-  </div>
 </template>
 
 <script lang="ts">
-import jQuery from "jquery";
-import { defineComponent } from "vue";
+import { defineComponent, PropType } from 'vue';
+import ILogObject from '../typescript_source/abstract/ILogObject';
 export default defineComponent({
-  props: {
-    screen_html: {
-      type: String,
-      default: "",
+    props: {
+      logs: Array as PropType< ILogObject[]>
     },
-    object_name: {
-      type: String,
-      default: "",
-    },
-  },
-
-  watch: {
-    screen_html: {
-      handler(value) {
-        console.log("inside screen_html(): " + value);
-        if (value.length == 0) {
-          return;
+    watch: {
+        logs: {
+            handler(newValue) {
+                this.$emit('logs-changed', newValue);
+                //alert( "logs changed" );
+            }
         }
-        jQuery("#" + this.object_name + "_log_viewer").html(value);
-        var height = jQuery(".screen-area").prop("scrollHeight");
-        jQuery(".screen-area").animate({ scrollTop: height }, 2000);
-      },
-      immediate: true, // This ensures the watcher is triggered upon creation
-      deep: true,
-    },
-  },
+    }    
 });
 </script>
 

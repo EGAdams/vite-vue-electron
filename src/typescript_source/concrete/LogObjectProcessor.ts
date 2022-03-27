@@ -3,9 +3,8 @@ import FreshToolBox from "./FreshToolBox";
 import LogObjectContainer from "./LogObjectContainer";
 /**
  * @description
- * 
+ *   Processes log objects.
  * @class LogObjectProcessor
- * @implements {I}
  */
 export default class LogObjectProcessor  {
     logObjectContainer: LogObjectContainer;

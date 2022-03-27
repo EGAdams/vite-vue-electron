@@ -3,6 +3,7 @@ import LogObjectContainer from "../concrete/LogObjectContainer";
 import LogObjectFactory from "../concrete/LogObjectFactory";
 import LogObjectProcessor from "../concrete/LogObjectProcessor";
 import FreshToolbox from "../concrete/FreshToolbox";
+import ILogObject from "../abstract/ILogObject";
 /**
  * @description
  * creates 10 log objects and adds them to a log object container.
@@ -13,6 +14,7 @@ import FreshToolbox from "../concrete/FreshToolbox";
  * @implements {ITestable}
  */
 export default class LogObjectProcessorTest implements ITestable {
+    writtenLogs: Array< ILogObject > = [];
     constructor() { console.log( 'constructing LogObjectProcessorTest object...' ); }
     testMe (): void {
         const logObjectContainer = new LogObjectContainer();
@@ -33,5 +35,7 @@ export default class LogObjectProcessorTest implements ITestable {
             console.log( "LogObjectProcessorTest passed!" );
         } else {
             console.log( "*** LogObjectProcessorTest failed! ***" );
-        }}
+        }
+        this.writtenLogs = logObjectProcessor.writtenLogs;
+    }
 }

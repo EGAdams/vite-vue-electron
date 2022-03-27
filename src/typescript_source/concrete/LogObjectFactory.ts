@@ -8,15 +8,13 @@ import ILogObject from "../abstract/ILogObject";
  */
 export default class LogObjectFactory {
     someObject: any;
-    caller_id: any;
-
     constructor( someObjectArg: any ) { 
         console.log( 'constructing LogObjectFactory object...' ); 
         this.someObject = someObjectArg; }
     
     createLogObject( messageArg: string ): ILogObject {
-        const time_now = Date.now();
-        const random_number = Math.floor( Math.random() * 10000000000000 );
+        const time_now              = Date.now();
+        const random_number         = Math.floor( Math.random() * 10000000000000 );
         const logObject: ILogObject = {
             timestamp: time_now,
             id:        this.someObject.constructor.name + "_" + random_number + '_' + time_now,
