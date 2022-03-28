@@ -27,11 +27,11 @@ export default class LogObjectProcessorTest implements ITestable {
         logObjectProcessor.processLogObjects();
         if ( logObjectProcessor.writtenLogs.length !== 10 && logObjectProcessor.unwrittenLogs.length !== 0 ) {
             console.error( "*** LogObjectProcessorTest failed! ***" ); }
-        for ( let i = 0; i < 5; i++ ) {
+        for ( let i = 0; i < 500; i++ ) {
             logObjectContainer.addLog( logObjectFactory.createLogObject( "message_" + i )); }
         logObjectProcessor.updateQue();
         logObjectProcessor.processLogObjects();
-        if ( logObjectProcessor.writtenLogs.length === 15 && logObjectProcessor.unwrittenLogs.length === 0 ) {
+        if ( logObjectProcessor.writtenLogs.length === 510 && logObjectProcessor.unwrittenLogs.length === 0 ) {
             console.log( "LogObjectProcessorTest passed!" );
         } else {
             console.error( "*** LogObjectProcessorTest failed! ***" );

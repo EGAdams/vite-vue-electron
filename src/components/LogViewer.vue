@@ -1,6 +1,4 @@
-<!--
- /*
-  * Log Viewer component */ -->
+<!-- /* Log Viewer component */ -->
 <template>
     <div :id="object_name + '_log_viewer'" class="screen-area">
         <h1>{{ object_name }}</h1>
@@ -30,14 +28,12 @@ export default defineComponent({
     },
     watch: {
         logs: {
-            handler(newValue) {
-                var height = jQuery( "#" + this.object_name  + "_log_viewer" ).prop( "scrollHeight" );  // TODO: somethings not right here
-                console.log( "height: " + height );
-                // jQuery( "#" + this.object_name  + "_log_viewer" ).animate(
-                //     { scrollTop: height },
-                //     2000
-                // );
-                jQuery( "#" + this.object_name  + "_log_viewer" ).scrollTop( height );
+            handler( newValue ) {
+                setTimeout(() => {
+                    jQuery( "#" + this.object_name + "_log_viewer" ).animate(
+                        { scrollTop: jQuery( "#" + this.object_name + "_log_viewer" ).prop( "scrollHeight" )},
+                        1000 );
+                }, 100 );    
             }}}    
 });
 </script>
