@@ -7,8 +7,8 @@ import ILogObject from "../abstract/ILogObject";
 /**
  * @description
  * creates 10 log objects and adds them to a log object container.
- * creates 5 more log objects and tries to add all 15.  the LogObjectProcessor should
- * detect the previous 10 entries and only grow by 5.
+ * creates 500 more log objects and tries to add all 510.  the LogObjectProcessor should
+ * detect the previous 10 entries and only grow by 500.
  *  
  * @class LogObjectProcessorTest
  * @implements {ITestable}
