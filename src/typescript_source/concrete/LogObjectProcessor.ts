@@ -23,13 +23,15 @@ export default class LogObjectProcessor  {
     
     addLog( logToAdd: ILogObject ): void {
         if ( !FreshToolBox.isInArray( logToAdd, this.writtenLogs )) {
-            this.unwrittenLogs.push( logToAdd ); }
-    }
+            this.unwrittenLogs.push( logToAdd ); }}
 
     processLogObjects(): void { 
         console.log( 'processing log objects...' );
         for ( const logObject in this.unwrittenLogs ) {
             // console.log( "processing log with id: " + this.unwrittenLogs[ logObject ].id + "..." );
             this.writtenLogs.push( this.unwrittenLogs[ logObject ]); }
-        this.unwrittenLogs = []; }    
+        this.unwrittenLogs = []; } 
+        
+    getWrittenLogs(): Array< ILogObject > {
+        return this.unwrittenLogs; }    
 }

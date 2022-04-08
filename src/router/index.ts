@@ -4,6 +4,7 @@ import { createWebHistory, createRouter } from 'vue-router';
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import LogViewerTest from '../component_tests/LogViewerTest.vue'
+import CommandManagerMonitor from '../components/CommandManagerMonitor.vue';
 
 // Vue.use(VueRouter)
 
@@ -15,6 +16,7 @@ const routes =  [
   },
   { path: '/about', name: 'About', component: About },
   { path: '/logviewer_test', name: 'LogViewerTest', component: LogViewerTest },
+  { path: '/command_manager_monitor', name: 'CommandManagerMonitor', component: CommandManagerMonitor }
 //   {
 //     // route level code-splitting
 //     // this generates a separate chunk (about.[hash].js) for this route

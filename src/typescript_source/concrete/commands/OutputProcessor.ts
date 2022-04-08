@@ -12,10 +12,7 @@ import LsCommand from "./ls_command/LsCommand";
 class OutputProcessor {
     constructor() { console.log( "constructing OutputProcesor..." ); }
 
-    async processOutput (
-        commandObjectArg: ICommandObject,
-        regexArg: IRegex
-    ): Promise<void> {
+    async processOutput ( commandObjectArg: ICommandObject, regexArg: IRegex ): Promise< void > {
         const ConcreteProcessor = await import( "./" + commandObjectArg.outputProcessor );
         const concreteProcessor = new ConcreteProcessor();
         concreteProcessor.commandObject = commandObjectArg;
@@ -46,7 +43,7 @@ class OutputProcessor {
         }
     }
 
-    async testMe (): Promise<void> {
+    async testMe (): Promise< void > {
         const errors = [];
         const fileManager = new FileManager();
         const populator = new ArrayPopulator(

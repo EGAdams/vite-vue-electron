@@ -89,10 +89,10 @@ class DataObject {
           console.log(_fields); // hush eslint
         });
       } catch (error) {
-        console.log("*** ERROR: problem while updatingObjec() ***");
+        console.log("*** ERROR: problem while updatingObject() ***");
       }
     } catch (e) {
-      console.log("*** ERROR: problem while updatingObjec() ***");
+      console.log("*** ERROR: problem while updatingObject() ***");
     }
   }
 }

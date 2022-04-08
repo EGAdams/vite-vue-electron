@@ -15,8 +15,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import LogViewer from "@/components/LogViewer.vue";
-import MonitorLed from "@/components/MonitorLed.vue";
+import LogViewer from "../components/LogViewer.vue";
+import MonitorLed from "../components/MonitorLed.vue";
 import StartCommandManager from "../typescript_source/concrete/commands/start_command_manager/StartCommandManager";
 import CommandExecutor from "../typescript_source/concrete/CommandExecutor";
 import ServerLedData from "../typescript_source/concrete/ServerLedData";

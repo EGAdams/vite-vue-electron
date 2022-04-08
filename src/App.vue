@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">The Home Page</router-link> |
       <router-link to="/about">About</router-link> | 
-      <router-link to="/logviewer_test">LogViewer Test</router-link>
+      <router-link to="/logviewer_test">LogViewer Test</router-link> |
+      <router-link to="/command_manager_monitor">Command Manager Monitor</router-link>
     </div>
     <router-view/>
   </div>
