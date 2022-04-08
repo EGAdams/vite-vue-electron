@@ -2,7 +2,7 @@ import ITestable from "../abstract/ITestable";
 import LogObjectContainer from "../concrete/LogObjectContainer";
 import LogObjectFactory from "../concrete/LogObjectFactory";
 import LogObjectProcessor from "../concrete/LogObjectProcessor";
-import FreshToolbox from "../concrete/FreshToolbox";
+import FreshToolBox from "../concrete/FreshToolBox";
 import ILogObject from "../abstract/ILogObject";
 /**
  * @description
@@ -21,7 +21,7 @@ export default class LogObjectProcessorTest implements ITestable {
         const logObjectFactory   = new LogObjectFactory( this );
         for ( let i = 0; i < 10; i++ ) {
             logObjectContainer.addLog( logObjectFactory.createLogObject( "message_" + i )); }
-        FreshToolbox.assert( logObjectContainer.getLogObjects().length === 10, "logObjectContainer.getLogObjects().length === 10" );
+        FreshToolBox.assert( logObjectContainer.getLogObjects().length === 10, "logObjectContainer.getLogObjects().length === 10" );
         const logObjectProcessor = new LogObjectProcessor( logObjectContainer );
         logObjectProcessor.updateQue();
         logObjectProcessor.processLogObjects();
