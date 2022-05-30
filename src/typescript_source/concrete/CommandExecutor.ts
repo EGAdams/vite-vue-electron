@@ -6,7 +6,7 @@ import Regex from "./Regex";
 import ArrayPopulator from "./ArrayPopulator"; 
 import FileManager from "./FileManager";
 import ICommandObject from '../abstract/ICommandObject';
-import { exec } from 'child_process';
+import exec from 'child_process';
 import ICommandFinishedEmitter from '../abstract/ICommandFinishedEmitter';
 import ServerRunningCommand from './commands/server_running/ServerRunningCommand';
 

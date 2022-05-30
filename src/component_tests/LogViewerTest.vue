@@ -11,8 +11,8 @@
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
 import LogViewer from "../components/LogViewer.vue";
-// import LogObjectProcessorTest from "../typescript_source/test/LogObjectProcessorTest";
-import LogObjectProcessorTest from '../../node_modules/log-object-processor/typescript_source/testing/LogObjectProcessorTest';
+import LogObjectProcessorTest from "../typescript_source/test/LogObjectProcessorTest";
+// import LogObjectProcessorTest from '../../node_modules/log-object-processor/typescript_source/testing/LogObjectProcessorTest';
 export default defineComponent({
     name: "LogViewerTest",
     components: {
