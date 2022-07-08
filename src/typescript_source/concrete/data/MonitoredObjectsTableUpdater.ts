@@ -8,7 +8,6 @@ import ISubject from "../../abstract/ISubject";
  *  objects table.
  * 
  */
-
 export default class MonitoredObjectsTableUpdater {    
     constructor() { console.log( 'constructing MonitoredObjectsTableUpdater object...' ); }
     
@@ -26,10 +25,7 @@ export default class MonitoredObjectsTableUpdater {
      */
     public update( subject: ISubject, objectViewIdArg: string ): void {
         console.log( "updating table..." );
-        if ( !objectViewIdArg  ) {
-            console.log( "*** ERROR: no id sent to constructor! ***" );
-            return; }
-
+        if ( !objectViewIdArg  ) { console.log( "*** ERROR: no id sent to update method! ***" ); return; }
         const query = "update monitored_objects set object_data='" + JSON.stringify( subject ) + 
                       "' where object_view_id='" + objectViewIdArg + "'";
 

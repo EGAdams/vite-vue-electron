@@ -8,7 +8,7 @@ import FreshToolBox from '../concrete/FreshToolBox';
  * 
  *  @description
  * 
- *  This is an object that we want to watch.  Hence the impementation of
+ *  This is an object that we want to watch.  Hence the implementation of
  *  <b>ISubject</b> (GoF p.328) where observers are attached and updated.  
  * 
  *  In the original design, only one database observer is attached so that 
@@ -33,7 +33,7 @@ export default class MonitoredObject implements ISubject, ITestable {
         console.log( "attaching an observer for this monitored object..." );
         this.observers.push( observer ); }
 
-    detatch( observer: IObserver ): void { 
+    detach( observer: IObserver ): void { 
         FreshToolBox.removeSpecificObjectFromArray( observer, this.observers ); }
     
     notify(): void {
@@ -45,7 +45,7 @@ export default class MonitoredObject implements ISubject, ITestable {
     testMe (): void {
         const errors: unknown[] = [];
         if ( errors.length == 0 ) {
-            console.log( "Object passsed all tests." );
+            console.log( "Object passed all tests." );
         } else {
             errors.forEach( ( error ) => {
                 console.error( error );

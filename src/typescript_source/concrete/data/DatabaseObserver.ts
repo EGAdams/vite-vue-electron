@@ -30,6 +30,5 @@ export default class DatabaseObserver implements IObserver {
      * 
      *  @memberof DatabaseObserver
      */
-    update(): void {
-        this.tableUpdater.update( this.subject, this.id ); }
+    update(): void { this.tableUpdater.update( this.subject, this.id ); }
 }

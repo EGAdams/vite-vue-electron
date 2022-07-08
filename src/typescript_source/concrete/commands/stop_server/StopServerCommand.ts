@@ -27,7 +27,7 @@ class StopServerCommand implements ICommandObject {
     this.executable = "stop_nodemon_server.sh ";
     this.args = "";
     this.name = "Stop Server";
-    this.description = "attemps to stop nodemon server";
+    this.description = "attempts to stop nodemon server";
     this.targetMachine = "thispc";
     this.output = new Array<string>();
     this.regex_map_filename = "StopServerRegex.txt";

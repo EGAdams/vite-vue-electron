@@ -6,7 +6,7 @@ import IObserver from "./IObserver";
 interface ISubject {
     observers: Array< IObserver >;
     attach( observer: IObserver ): void;
-    detatch( observer: IObserver ): void;
+    detach( observer: IObserver ): void;
     notify(): void;
 }
 

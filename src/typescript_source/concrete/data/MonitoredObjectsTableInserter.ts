@@ -13,7 +13,7 @@ import QueryInsertProcessor from './QueryInsertProcessor';
  *  The query runner will then use the created query to insert a new object into the 
  *  monitored objects table.
  * 
- *  I'm not sure if the design of this object voilates the SRP rule or not by validating the
+ *  I'm not sure if the design of this object violates the SRP rule or not by validating the
  *  insertion.  
  * 
  */
