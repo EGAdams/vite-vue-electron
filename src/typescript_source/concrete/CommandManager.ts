@@ -9,7 +9,7 @@ const CHECK_EVERY = 2000; // milliseconds
 const EXEC_PATH = "/mnt/c/Users/EG/monitor/";
 
 import CommandExecutor from "./CommandExecutor";
-import DataObject from "./data/DataObject";
+import DataObject from "./data/data_object/DataObject";
 import CommandObject from "./CommandObject";
 import ICommandObject from "../abstract/ICommandObject";
 import IMonitoredObjectRow from "../abstract/IMonitoredObjectRow";

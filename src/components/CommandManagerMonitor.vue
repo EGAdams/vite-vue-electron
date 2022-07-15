@@ -36,7 +36,7 @@ export default defineComponent({
   methods: {
     startCommandManager() {
       this.monitor_led_data.ledText = "starting command manager... ";
-      var executor = new CommandExecutor(new StartCommandManager());
+      var executor = new CommandExecutor( new StartCommandManager());
       executor.executeCommand();
     },
   },
