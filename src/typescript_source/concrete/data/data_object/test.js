@@ -7,3 +7,4 @@ let dataObject = new DataObject.default();
 let id = "test_id_101";
 let test_object = { name: "test" };
 dataObject.insertObject( id, test_object );
+dataObject.selectObject( id );

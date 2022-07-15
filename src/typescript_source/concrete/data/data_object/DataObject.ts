@@ -99,9 +99,11 @@ class DataObject {
             console.log( "executing await query in insertObject..." );
             //  const monitoredObject = new MonitoredObject();
             //   monitoredObject.screen_html = "";
+            let object_string = JSON.stringify( objectData );
+            console.log( "object_string: " + object_string );
             let dataQuery =
                 "insert into monitored_objects (object_view_id, object_data) values ('";
-            dataQuery += objectName + "', '" + objectData + "')";
+            dataQuery += objectName + "', '" + object_string + "')";
             try {
                 this.pool.query( dataQuery, ( _err, _rows, _fields ) => {
                     //   monitoredObject.object_data = rows[0];
@@ -117,6 +119,31 @@ class DataObject {
             }
         } catch ( e ) {
             console.log( "*** ERROR: problem while insertingObject() ***" );
+        }
+    }
+
+    selectObject ( object_view_id: string ): void {
+        try {
+            console.log( "executing await query in selectObject..." );
+            let dataQuery =
+                "select object_data from monitored_objects where object_view_id='";
+            dataQuery += object_view_id + "'";
+            try {
+                this.pool.query( dataQuery, ( _err, rows, _fields ) => {
+                    let object_data = rows[ 0 ][ "object_data" ];
+                    let object_view = JSON.parse( object_data );
+                    console.log( "object view name: " + object_view.name );
+                    if( object_view.name == "test" ) {
+                        console.log( "tests passed." );
+                    } else {
+                        console.log( "tests failed." );
+                    }
+                });
+            } catch ( error ) {
+                console.log( "*** ERROR: problem while selectingObject() ***" );
+            }
+        } catch ( e ) {
+            console.log( "*** ERROR: problem while selectingObject() ***" );
         }
     }
 }
