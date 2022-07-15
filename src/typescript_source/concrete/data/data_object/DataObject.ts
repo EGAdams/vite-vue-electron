@@ -3,16 +3,18 @@
  */
 import * as mysqlObject from "mysql";
 import io from "socket.io-client";
+import ISshConfig from "../../../abstract/ISshConfig";
 import BasicConfig from "../../../config/BasicConfig";
 import MonitoredObject from "../../MonitoredObject";
 import ICommandFinishedEmitter from "../../../abstract/ICommandFinishedEmitter";
 
 class DataObject {
-    pool = mysqlObject.createPool( new BasicConfig() );
+    pool: mysqlObject.Pool;
     emitter: ICommandFinishedEmitter;
     io: unknown;
-
-    constructor() {
+ 
+    constructor( config: ISshConfig ) {
+        this.pool = mysqlObject.createPool( config );
         this.emitter = io( "http://localhost:3000" );
         try {
             console.log( "***** DATA OBJECT CONNECTING *****" );

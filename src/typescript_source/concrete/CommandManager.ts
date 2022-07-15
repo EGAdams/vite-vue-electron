@@ -14,6 +14,7 @@ import CommandObject from "./CommandObject";
 import ICommandObject from "../abstract/ICommandObject";
 import IMonitoredObjectRow from "../abstract/IMonitoredObjectRow";
 import MonitoredObject from "./MonitoredObject";
+import BasicConfig from "../config/BasicConfig";
 
 /**
  *
@@ -23,7 +24,7 @@ import MonitoredObject from "./MonitoredObject";
  */
 class CommandManager extends MonitoredObject {
     private que = new Array< CommandObject >();
-    dataObject = new DataObject();
+    dataObject = new DataObject( new BasicConfig() );
 
     constructor() { super(); }
 
