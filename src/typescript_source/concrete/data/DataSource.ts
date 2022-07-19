@@ -46,7 +46,7 @@ class DataSource implements IDataObject, ITestable {
 
 
         if ( errors.length == 0 ) {
-            console.log( "DataSource Object passsed all tests." );
+            console.log( "DataSource Object passed all tests." );
         } else {
             errors.forEach( ( error ) => {
                 console.error( error );

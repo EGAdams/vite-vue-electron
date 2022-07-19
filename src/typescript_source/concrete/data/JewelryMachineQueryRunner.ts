@@ -14,7 +14,7 @@ import IApiArgs from "../../abstract/data/IApiArgs";
  *  What is done with this data is determined by the queryResultProcessor that is sent in the api arguments.
  * 
  *  This is begging to be turned into a more generic class or interface.  The only thing specific about
- *  this class is the fact that it is using the jewery machine for communication.
+ *  this class is the fact that it is using the jewelry machine for communication.
  *
  * @export
  * @class JewelryMachineQueryRunner
@@ -24,8 +24,7 @@ import IApiArgs from "../../abstract/data/IApiArgs";
 export default class JewelryMachineQueryRunner implements IQueryRunner, ITestable {
     url = "http://americansjewelry.com/test2/runQuery.php";
 
-    constructor() {
-        console.log( 'constructing JewelryMachineQueryRunner object...' ); }
+    constructor() { console.log( 'constructing JewelryMachineQueryRunner object...' ); }
 
     /**
      *

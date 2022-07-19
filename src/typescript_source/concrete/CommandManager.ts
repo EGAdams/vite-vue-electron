@@ -9,11 +9,12 @@ const CHECK_EVERY = 2000; // milliseconds
 const EXEC_PATH = "/mnt/c/Users/EG/monitor/";
 
 import CommandExecutor from "./CommandExecutor";
-import DataObject from "./data/DataObject";
+import DataObject from "./data/data_object/DataObject";
 import CommandObject from "./CommandObject";
 import ICommandObject from "../abstract/ICommandObject";
 import IMonitoredObjectRow from "../abstract/IMonitoredObjectRow";
 import MonitoredObject from "./MonitoredObject";
+import BasicConfig from "../config/BasicConfig";
 
 /**
  *
@@ -23,7 +24,7 @@ import MonitoredObject from "./MonitoredObject";
  */
 class CommandManager extends MonitoredObject {
     private que = new Array< CommandObject >();
-    dataObject = new DataObject();
+    dataObject = new DataObject( new BasicConfig() );
 
     constructor() { super(); }
 
@@ -43,7 +44,7 @@ class CommandManager extends MonitoredObject {
      */
     private getCommands (): void {
         try {
-            this.dataObject.pool.query(
+            this.dataObject.connection.query(
                 "select * from wp_commands",
                 ( _err: unknown, rows: Array< IMonitoredObjectRow >, _fields: unknown ) => {
                     for ( const row in rows ) {
@@ -68,7 +69,7 @@ class CommandManager extends MonitoredObject {
                 console.log( "error: " + error.message );
             } else {
                 console.log(
-                    "*** ERROR: unknown caught error while CommandMannager.getCommands() ***"
+                    "*** ERROR: unknown caught error while CommandManager.getCommands() ***"
                 );
             }
         }
@@ -110,7 +111,7 @@ class CommandManager extends MonitoredObject {
             const current_id = this.que[ index ].id;
             this.que.splice( index, 1 );
             try {
-                this.dataObject.pool.query(
+                this.dataObject.connection.query(
                     "delete from wp_commands where id='" + current_id + "'",
                     function () {
                         console.log( "deleted id: " + current_id );
@@ -121,7 +122,7 @@ class CommandManager extends MonitoredObject {
                     console.log( "error: " + error.message );
                 } else {
                     console.log(
-                        "*** ERROR: unknown caught error while CommandMannager.getCommands() ***"
+                        "*** ERROR: unknown caught error while CommandManager.getCommands() ***"
                     );
                 }
             }

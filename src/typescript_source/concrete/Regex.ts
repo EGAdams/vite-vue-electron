@@ -5,7 +5,7 @@ import IRawRegexStringPair from "../abstract/IRawRegexStringPair";
 /**
  * @description 
  *  this object is used to find any string of interest in an array of strings.
- *  it was originally designed to pull a list of targeted regular expresions
+ *  it was originally designed to pull a list of targeted regular expressions
  *  for processing HUGE, browser crashing log files.  I was working on a java
  *  version of this before they hauled me out of FPL like a criminal in 2016.
  *  That's when they stole my monitoring ideas and left me on the streets.

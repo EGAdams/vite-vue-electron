@@ -11,4 +11,4 @@ class StartCommandManagerOutputProcessor extends OutputProcessor {
         console.log( _index ); // hush eslint
     }
 }
-module.exports = StartCommandManagerOutputProcessor; // dont forget this!
+module.exports = StartCommandManagerOutputProcessor; // don't forget this!

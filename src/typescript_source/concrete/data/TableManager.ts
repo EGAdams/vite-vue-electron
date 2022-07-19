@@ -18,7 +18,7 @@ import ISubject from "../../abstract/ISubject";
 
 class TableManager {
     dataSource: IDataObject;
-    subjects: Array<ISubject> = [];
+    subjects: Array< ISubject > = [];
 
     constructor() {
         this.dataSource = DataSourceFactory.getDataSource();

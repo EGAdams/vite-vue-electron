@@ -10,7 +10,7 @@ import Regex from "../Regex";
 import LsCommand from "./ls_command/LsCommand";
 
 class OutputProcessor {
-    constructor() { console.log( "constructing OutputProcesor..." ); }
+    constructor() { console.log( "constructing OutputProcessor..." ); }
 
     async processOutput ( commandObjectArg: ICommandObject, regexArg: IRegex ): Promise< void > {
         const ConcreteProcessor = await import( "./" + commandObjectArg.outputProcessor );

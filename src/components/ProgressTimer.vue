@@ -13,14 +13,14 @@
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "progress-timer",
-  data() {
+  data() {                  // THINGS THAT STAY THE SAME.  THE BACKBONE OF THE COMPONENT.
     return {
       timerEnabled: true,
       timerCount: 100,
     };
   },
 
-  props: {
+  props: {                  // THINGS THAT CHANGE THE COMPONENT.  THE FRONTBONE OF THE COMPONENT.
     object_view_id: {
       type: String,
       default: "",

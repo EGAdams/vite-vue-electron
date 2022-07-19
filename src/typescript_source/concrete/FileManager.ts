@@ -31,7 +31,7 @@ class FileManager implements IPopulator {
         const testArray = this.populateArray( "parsingTools/test.txt" );
         if ( testArray.length != 5 ) {
             errors.push(
-                "*** ERROR: failed lenghth test. " +
+                "*** ERROR: failed length test. " +
                 " length was expected to be 5.  got: " +
                 testArray.length +
                 " instead. ***"
@@ -52,7 +52,7 @@ class FileManager implements IPopulator {
         }
 
         if ( errors.length == 0 ) {
-            console.log( "FileManager Object passsed all tests." );
+            console.log( "FileManager Object passed all tests." );
         } else {
             errors.forEach( ( error ) => {
                 console.error( error );

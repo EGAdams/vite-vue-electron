@@ -23,7 +23,7 @@ export default class LogObjectFactory {
         return logObject; }
 
     getCallingMethod(): string {
-        var obj:any = {};
+        let obj:any = {};
         Error.captureStackTrace( obj, this.getCallingMethod );
         return obj.stack.split( '\n' )[ 2 ].match( /at\s+\w+.(\w+)/ )[ 1 ]; }
 }
