@@ -44,7 +44,7 @@ class CommandManager extends MonitoredObject {
      */
     private getCommands (): void {
         try {
-            this.dataObject.pool.query(
+            this.dataObject.connection.query(
                 "select * from wp_commands",
                 ( _err: unknown, rows: Array< IMonitoredObjectRow >, _fields: unknown ) => {
                     for ( const row in rows ) {
@@ -69,7 +69,7 @@ class CommandManager extends MonitoredObject {
                 console.log( "error: " + error.message );
             } else {
                 console.log(
-                    "*** ERROR: unknown caught error while CommandMannager.getCommands() ***"
+                    "*** ERROR: unknown caught error while CommandManager.getCommands() ***"
                 );
             }
         }
@@ -111,7 +111,7 @@ class CommandManager extends MonitoredObject {
             const current_id = this.que[ index ].id;
             this.que.splice( index, 1 );
             try {
-                this.dataObject.pool.query(
+                this.dataObject.connection.query(
                     "delete from wp_commands where id='" + current_id + "'",
                     function () {
                         console.log( "deleted id: " + current_id );
@@ -122,7 +122,7 @@ class CommandManager extends MonitoredObject {
                     console.log( "error: " + error.message );
                 } else {
                     console.log(
-                        "*** ERROR: unknown caught error while CommandMannager.getCommands() ***"
+                        "*** ERROR: unknown caught error while CommandManager.getCommands() ***"
                     );
                 }
             }
