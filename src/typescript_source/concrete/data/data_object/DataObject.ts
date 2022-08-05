@@ -145,7 +145,6 @@ class DataObject {
 
     async runSyncQuery( queryArg :string ) {
         try {
-            
             let results: any;
             const query = util.promisify( this.connection.query ).bind( this.connection );
             try {
@@ -156,7 +155,7 @@ class DataObject {
             }
             return results;
         } catch ( e ) {
-            throw Error( "*** ERROR: problem while insertingObject() ***" );
+            throw Error( "*** ERROR: running query: " + queryArg + " ***" );
         }
     }
 }
