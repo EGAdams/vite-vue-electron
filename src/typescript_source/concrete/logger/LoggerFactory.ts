@@ -1,14 +1,14 @@
-import MonitoredObject from "../../../../node_modules/monitored-object-ts";
+import MonitoredObject from "monitored-object-ts";
 import IMonitoredObject from "../../abstract/IMonitoredObject";
 
 /**
- *  @class LogObjectFactory
+ *  @class LoggerFactory
  * 
  *  @description
  *  a factory for log objects.
  * 
  */
- export default class LogObjectFactory {
+ export default class LoggerFactory {
     constructor( objectName: string ) { console.log( "creating a log object from " + objectName + "..." ); }
     /**
      * @method getLogger
@@ -18,16 +18,20 @@ import IMonitoredObject from "../../abstract/IMonitoredObject";
      * @param {string} objectName
      * @param {Array< unknown >} arrayToRemoveItFrom
      * @return { IMonitoredObject }
-     * @memberof LogObjectFactory
+     * @memberof LoggerFactory
      */
 
 	factory_id = "2022";
 
-    static getLogger ( objectName: string ): IMonitoredObject {
+	
+    
+	static getLogger ( objectName: string ): IMonitoredObject {
         console.log( "getting logger for " + objectName + "..." );
 		let monitoredObject = new [ objectName ](); 
 
 	}
+
+
     
     static capitalizeFirstLetter ( stringToUppercase: string ): string {
         return stringToUppercase.charAt( 0 ).toUpperCase() + stringToUppercase.slice( 1 ); }
