@@ -7,7 +7,7 @@ import IApiArgs from "../../abstract/data/IApiArgs";
 /**
  * @description
  *  
- * Sends the results of a query to the query result processor pointed to by the api argument object.
+ *  Sends the results of a query to the query result processor pointed to by the api argument object.
  * 
  *  In order to send the query, we use axios to establish communication.
  *  An object of this class uses axios to fire off the query that is included in the passed in api arguments.

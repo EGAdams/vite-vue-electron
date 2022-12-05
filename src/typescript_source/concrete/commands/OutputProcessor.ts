@@ -44,7 +44,7 @@ class OutputProcessor {
     }
 
     async testMe (): Promise< void > {
-        const errors = [];
+        const errors = [] as string[];
         const fileManager = new FileManager();
         const populator = new ArrayPopulator(
             fileManager,
