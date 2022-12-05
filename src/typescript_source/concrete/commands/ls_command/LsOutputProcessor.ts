@@ -11,4 +11,4 @@ class LsOutputProcessor extends OutputProcessor {
         console.log( _index ); // hush eslint
     }
 }
-module.exports = LsOutputProcessor; // dont forget this!
+module.exports = LsOutputProcessor; // don't forget this!

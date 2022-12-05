@@ -4,10 +4,10 @@
 import mysql from 'mysql';
 import util  from  'util';
 import io from "socket.io-client";
-import ISshConfig from "../../../abstract/ISshConfig";
 import BasicConfig from "../../../config/BasicConfig";
 import MonitoredObject from "../../MonitoredObject";
 import ICommandFinishedEmitter from "../../../abstract/ICommandFinishedEmitter";
+import IDatabaseConfig from '../../../abstract/IDatabaseConfig';
 
 class DataObject {
     //pool: mysqlObject.Pool;
@@ -15,7 +15,7 @@ class DataObject {
     io: unknown;
     connection!: mysql.Connection;
  
-    constructor( config: ISshConfig ) {
+    constructor( config: IDatabaseConfig ) {
         this.emitter = io( "http://localhost:3000" );
         try {
             console.log( "***** DATA OBJECT CONNECTING *****" );
@@ -153,6 +153,7 @@ class DataObject {
             } catch ( error :any ) {
                 throw Error( "error: " + error.toString() );
             }
+			this.connection.destroy();
             return results;
         } catch ( e ) {
             throw Error( "*** ERROR: running query: " + queryArg + " ***" );

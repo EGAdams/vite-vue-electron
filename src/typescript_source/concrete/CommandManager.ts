@@ -12,9 +12,9 @@ import CommandExecutor from "./CommandExecutor";
 import DataObject from "./data/data_object/DataObject";
 import CommandObject from "./CommandObject";
 import ICommandObject from "../abstract/ICommandObject";
-import IMonitoredObjectRow from "../abstract/IMonitoredObjectRow";
-import MonitoredObject from "./MonitoredObject";
 import BasicConfig from "../config/BasicConfig";
+import IMonitoredObjectRow from "../abstract/IMonitoredObjectRow";
+const { MonitoredObject } = require( 'monitored-object-ts' );
 
 /**
  *

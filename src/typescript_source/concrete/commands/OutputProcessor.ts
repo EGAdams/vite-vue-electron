@@ -53,7 +53,7 @@ class OutputProcessor {
         // regex needs a populator to fill it's clip.  populators have a populateArray() method.
         const regex = new Regex( populator, "parsingTools/LsRegex.txt" );
 
-        // reguardless of the processor type, we need a fresh array here.
+        // regardless of the processor type, we need a fresh array here.
         // any kind of output processor needs example output text for the test.
 
         const freshArray = fileManager.populateArray(
@@ -69,7 +69,7 @@ class OutputProcessor {
             errors.push( "*** ERROR: OutputProcessor fails output exists test. ***" );
         }
         if ( errors.length == 0 ) {
-            console.log( "OutputProcessor Object passsed all tests." );
+            console.log( "OutputProcessor Object passed all tests." );
         } else {
             errors.forEach( ( error ) => {
                 console.error( error );
@@ -77,4 +77,4 @@ class OutputProcessor {
         }
     }
 }
-export default OutputProcessor; // dont forget this!
+export default OutputProcessor; // don't forget this!
