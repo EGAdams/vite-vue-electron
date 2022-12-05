@@ -1,6 +1,3 @@
-/*
- * class OutputProcessor
- */
 import FileManager from "../FileManager";
 import ArrayPopulator from "../ArrayPopulator";
 import ICommandObject from "../../abstract/ICommandObject";
@@ -9,6 +6,7 @@ import INameRegexPair from "../../abstract/INameRegexPair";
 import Regex from "../Regex";
 import LsCommand from "./ls_command/LsCommand";
 
+/** @class OutputProcessor */
 class OutputProcessor {
     constructor() { console.log( "constructing OutputProcessor..." ); }
 

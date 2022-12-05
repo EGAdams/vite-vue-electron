@@ -3,6 +3,7 @@
  */
 
 import ICommandObject from "../../../abstract/ICommandObject";
+import Socket from "../../Socket";
 
 class StopServerCommand implements ICommandObject {
   executable: string;
@@ -12,7 +13,7 @@ class StopServerCommand implements ICommandObject {
   output: Array<string>;
   regex_map_filename: string;
   outputProcessor: string;
-  emitter: string;
+  emitter: Socket;
   processedOutput: unknown;
   name: string;
   status: unknown;
@@ -32,7 +33,7 @@ class StopServerCommand implements ICommandObject {
     this.output = new Array<string>();
     this.regex_map_filename = "StopServerRegex.txt";
     this.outputProcessor = "StopServerOutputProcessor";
-    this.emitter = "Socket";
+    this.emitter = new Socket();
     this.execution_type = "execute_and_process";
     this.status = {
       statusBlock: {

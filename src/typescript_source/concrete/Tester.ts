@@ -12,7 +12,7 @@ class Tester {
     start(): void {
         this.testableObjects.forEach( async specimen => {
             if ( specimen.length != 0 && !specimen.match( /^#/ )) {
-                const Subject = await import( "../test/" + specimen );
+                const Subject = await import( "./" + specimen );
                 const subject = new Subject.default();
                 console.log( "\nbegin " + specimen + " test..." );
                 subject.testMe();

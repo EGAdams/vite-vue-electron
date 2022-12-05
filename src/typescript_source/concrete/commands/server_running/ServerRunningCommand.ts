@@ -1,9 +1,8 @@
-/*
- *  class ServerRunningCommand
- */
 import ICommandObject from "../../../abstract/ICommandObject";
+import Socket from "../../../concrete/Socket";
 
-class ServerRunningCommand implements ICommandObject {
+/** @class ServerRunningCommand */
+export default class ServerRunningCommand implements ICommandObject {
   execution_type = "execute_and_process";
   id = 0;
   command_stringified = "";
@@ -19,7 +18,7 @@ class ServerRunningCommand implements ICommandObject {
   commandMethod = "execute";
   regex_map_filename = "ServerRunningRegex.txt";
   outputProcessor = "ServerRunningOutputProcessor";
-  emitter = "Socket";
+  emitter = new Socket();
   status = {
     statusBlock: {
       led: {
@@ -29,9 +28,5 @@ class ServerRunningCommand implements ICommandObject {
     },
   };
 
-  constructor() {
-    console.log("constructing ServerRunningCommand...");
-  }
+  constructor() { console.log("constructing ServerRunningCommand..."); }
 }
-
-export default ServerRunningCommand;

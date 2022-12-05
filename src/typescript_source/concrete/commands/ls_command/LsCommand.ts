@@ -1,8 +1,7 @@
-/*
- *  class LsCommand
- */
 import ICommandObject from "../../../abstract/ICommandObject";
+import Socket from "../../Socket";
 
+/**  @class LsCommand */
 export default class LsCommand implements ICommandObject {
   execution_type = "execute_and_process";
   id = 0;
@@ -19,7 +18,7 @@ export default class LsCommand implements ICommandObject {
   commandMethod = "execute";
   regex_map_filename = "LsRegex.txt";
   outputProcessor = "LsCommandOutputProcessor";
-  emitter = "Socket";
+  emitter = new Socket();
   status = {
     statusBlock: {
       led: {
@@ -29,7 +28,5 @@ export default class LsCommand implements ICommandObject {
     },
   };
 
-  constructor() {
-    console.log("constructing LsCommand...");
-  }
+  constructor() { console.log( "constructing LsCommand..." ); }
 }

@@ -1,9 +1,11 @@
+import ICommandFinishedEmitter from "./ICommandFinishedEmitter";
+
 /*
  * interface ICommandObject
  *
  * TODO: try to put a different type into the properties array for a test.
  * not sure why im disabling no-unused-vars here.  eslint bitching about it.
- *
+ * 
  */
 interface ICommandObject {
   execution_type: string;
@@ -17,8 +19,7 @@ interface ICommandObject {
   output: Array<string>;
   regex_map_filename: string;
   outputProcessor: string;
-  emitter: string;
-  properties: Array<ICommandObject>;
+  emitter: ICommandFinishedEmitter;
   status: unknown;
   processedOutput: unknown;
 }
