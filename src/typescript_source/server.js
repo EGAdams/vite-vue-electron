@@ -2,17 +2,9 @@ const app = require( "express" )();            // app is used to build the http 
 const http = require( "http" ).Server( app );  // http is needed for the main io socket
 const io = require( "socket.io" )( http );      // the main socket
 
-const Storage = require( './Storage' );
-const Command = require( './Command' );
-const ClientFactory = require( './parsingTools/ClientFactory' ).default;
-
-require( './parsingTools/Utils' );
-const AlertPopulator = require( './parsingTools/AlertPopulator' );
-const ArrayPopulator = require( './parsingTools/ArrayPopulator' );
-const FileManager = require( './parsingTools/FileManager' );
-const Regex = require( './parsingTools/Regex' );
-const CommandExecutor = require( './parsingTools/CommandExecutor' );
-const ServerManager = require( './parsingTools/ServerManager' );
+const FileManager = require( '../../out/typescript_source/concrete/FileManager' );
+const Regex = require( '../../out/typescript_source/concrete/Regex' );
+const CommandExecutor = require( '../../out/typescript_source/concrete/CommandExecutor' );
 
 let users = [];
 let messages = [];

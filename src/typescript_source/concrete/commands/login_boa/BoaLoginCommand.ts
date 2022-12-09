@@ -14,7 +14,7 @@ export default class BoaLoginCommand implements ICommandObject {
     processedOutput: unknown;
     executable = "ps ";
     args = " -ef ";
-    description = "checks server running on this machine";
+    description = "log in to bank of america account";
     targetMachine = "thispc";
     commandObject = "CommandExecutor";
     output = new Array<string>();
