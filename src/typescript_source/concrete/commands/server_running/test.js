@@ -6,4 +6,4 @@ const CommandExecutor      = require( "../../../../../out/typescript_source/conc
 let commandObject = new ServerRunningCommand.default();
 let executor      = new CommandExecutor.default( commandObject );
 
-executor.executeAndProcess();
+executor.execute();

@@ -27,8 +27,7 @@ class OutputProcessor {
 
                     concreteProcessor[ matchedRegex.name ]( matchedRegex, index );
                 } else {
-                    const errmsg =
-                        "*** ERROR: Regex object returned a matched string without a name! ***";
+                    const errmsg = "*** ERROR: Regex object returned a matched string without a name! ***";
                     console.log( errmsg );
                     throw errmsg;
                 }

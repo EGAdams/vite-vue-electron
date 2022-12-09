@@ -16,8 +16,8 @@ export default class ServerRunningCommand implements ICommandObject {
   commandObject = "CommandExecutor";
   output = new Array< string >();
   commandMethod = "execute";
-  regex_map_filename = "ServerRunningRegex.txt";
-  outputProcessor = "ServerRunningOutputProcessor";
+  regex_map_filename = "commands/server_running/ServerRunningRegex.txt";
+  outputProcessor = "commands/server_running/ServerRunningOutputProcessor";
   emitter = new Socket();
   status = {
     statusBlock: {

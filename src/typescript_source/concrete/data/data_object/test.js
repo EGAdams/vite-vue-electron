@@ -49,5 +49,5 @@ let results = dataObject.runSyncQuery( selectObjectQuery ).then( check_select_re
 														  .then( setTimeout( function() {
 															dataObject.deleteMonitoredObjects( dataObject );
 															process.exit( 0 );
-														  }, DELAY_BEFORE_DATABASE_DELETE ));
+														  }, DELAY_BEFORE_DATABASE_DELETE /* AND EXIT */ ));
 
