@@ -88,7 +88,7 @@ class CommandManager extends MonitoredObject {
             // check server command object here
 
             const commandExecutor = new CommandExecutor( commandArg );
-            commandExecutor.executeCommand();
+            commandExecutor.execute();
         } else if ( commandArg.command_stringified.length > 0 ) {
             console.log(
                 "found command object.  length: " +
@@ -99,7 +99,7 @@ class CommandManager extends MonitoredObject {
             command_json_object.executable =
                 EXEC_PATH + command_json_object.executable; // work out PATH later.. dam that's a rabbit hole
             const commandExecutor = new CommandExecutor( command_json_object );
-            commandExecutor.executeCommand();
+            commandExecutor.execute();
         }
     }
 
