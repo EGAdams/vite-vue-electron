@@ -1,6 +1,5 @@
 
 import ICommandObject from "../abstract/ICommandObject";
-import Socket from "../concrete/Socket";
 
 /** @class CommandObject implements ICommandObject */
 class CommandObject implements ICommandObject {
@@ -11,7 +10,7 @@ class CommandObject implements ICommandObject {
 	output: string[];
 	regex_map_filename: string;
 	outputProcessor: string;
-	emitter: Socket;
+	emitter: string;
 	status: unknown;
 	processedOutput: unknown;
 	execution_type: string;
@@ -29,7 +28,7 @@ class CommandObject implements ICommandObject {
 		this.status = commandObjectArg.status;
 		this.regex_map_filename = commandObjectArg.regex_map_filename;
 		this.outputProcessor = commandObjectArg.outputProcessor;
-		this.emitter = new Socket();
+		this.emitter = commandObjectArg.emitter;
 		this.processedOutput = Object; // no processed output yet.
 		this.execution_type = commandObjectArg.execution_type;
 		this.id = commandObjectArg.id;

@@ -1,5 +1,5 @@
 import ICommandObject from "../../../abstract/ICommandObject";
-import Socket from "../../Socket";
+import EmitterSocket from "../../EmitterSocket";
 
 /** @class BoaLoginCommand */
 export default class BoaLoginCommand implements ICommandObject {
@@ -21,7 +21,7 @@ export default class BoaLoginCommand implements ICommandObject {
     commandMethod = "execute";
     regex_map_filename = "commands/server_running/BoaLoginRegex.txt";
     outputProcessor = "commands/server_running/BoaLoginOutputProcessor";
-    emitter = new Socket();
+    emitter = "EmitterSocket";
     status = {
         statusBlock: {
             led: {

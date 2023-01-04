@@ -14,7 +14,7 @@ import CommandObject from "./CommandObject";
 import ICommandObject from "../abstract/ICommandObject";
 import BasicConfig from "../config/BasicConfig";
 import IMonitoredObjectRow from "../abstract/IMonitoredObjectRow";
-import Socket from "./Socket";
+import EmitterSocket from "./EmitterSocket";
 const { MonitoredObject } = require( 'monitored-object-ts' );
 
 /**
@@ -54,7 +54,7 @@ class CommandManager extends MonitoredObject {
                         commandObject.args                = rows[ row ].command_args;
                         commandObject.id                  = rows[ row ].id;
                         commandObject.targetMachine       = "thispc";
-                        commandObject.emitter             = new Socket();
+                        commandObject.emitter             = "EmitterSocket";
                         commandObject.command_stringified = rows[ row ].command_stringified;
                         const index = this.que.findIndex(( x ) => x.command_name == commandObject.command_name );
                         if ( index < 0 ) {

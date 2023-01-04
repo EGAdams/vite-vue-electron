@@ -1,5 +1,5 @@
 import ICommandObject from "../../../abstract/ICommandObject";
-import Socket from "../../../concrete/Socket";
+import EmitterSocket from "../../EmitterSocket";
 
 /** @class ServerRunningCommand */
 export default class ServerRunningCommand implements ICommandObject {
@@ -18,7 +18,7 @@ export default class ServerRunningCommand implements ICommandObject {
   commandMethod = "execute";
   regex_map_filename = "commands/server_running/ServerRunningRegex.txt";
   outputProcessor = "commands/server_running/ServerRunningOutputProcessor";
-  emitter = new Socket();
+  emitter = "EmitterSocket";
   status = {
     statusBlock: {
       led: {

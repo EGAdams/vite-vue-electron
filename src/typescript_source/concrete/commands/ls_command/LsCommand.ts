@@ -1,5 +1,5 @@
 import ICommandObject from "../../../abstract/ICommandObject";
-import Socket from "../../Socket";
+import EmitterSocket from "../../EmitterSocket";
 
 /**  @class LsCommand */
 export default class LsCommand implements ICommandObject {
@@ -18,7 +18,7 @@ export default class LsCommand implements ICommandObject {
   commandMethod = "execute";
   regex_map_filename = "LsRegex.txt";
   outputProcessor = "LsCommandOutputProcessor";
-  emitter = new Socket();
+  emitter = "EmitterSocket";
   status = {
     statusBlock: {
       led: {

@@ -19,7 +19,7 @@ interface ICommandObject {
   output: Array<string>;
   regex_map_filename: string;
   outputProcessor: string;
-  emitter: ICommandFinishedEmitter;
+  emitter: string;
   status: unknown;
   processedOutput: unknown;
 }

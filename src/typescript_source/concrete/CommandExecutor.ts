@@ -31,8 +31,8 @@ class CommandExecutor {
 
     public async execute(): Promise< void > {
         console.log( "requiring this.commandObject.emitter: [" + this.commandObject.emitter + "]" );
-        const CommandFinishedEmitter = await import ( "./" + this.commandObject.emitter );
-        this.io = new CommandFinishedEmitter();
+        const EmitterSocket = await import ( "./" + this.commandObject.emitter );
+        this.io = new EmitterSocket.default();
 
         console.log( "processing command..." );
 

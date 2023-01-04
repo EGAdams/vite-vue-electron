@@ -1,5 +1,5 @@
 import ICommandObject from "../../abstract/ICommandObject";
-import Socket from "../Socket";
+import EmitterSocket from "../EmitterSocket";
 /**  @class VanillaCommand */
 class VanillaCommand implements ICommandObject {
   execution_type = "";
@@ -17,7 +17,7 @@ class VanillaCommand implements ICommandObject {
   commandMethod = "execute";
   regex_map_filename = "t";
   outputProcessor = "";
-  emitter = new Socket();
+  emitter = "EmitterSocket";
   status = {
     statusBlock: {
       led: {

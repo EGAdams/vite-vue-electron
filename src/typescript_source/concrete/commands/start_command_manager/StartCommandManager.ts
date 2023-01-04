@@ -2,7 +2,7 @@
  *  class StartCommandManager
  */
 import ICommandObject from "../../../abstract/ICommandObject";
-import Socket from "../../Socket";
+import EmitterSocket from "../../EmitterSocket";
 
 class StartCommandManager implements ICommandObject {
     execution_type = "execute_and_process";
@@ -16,7 +16,7 @@ class StartCommandManager implements ICommandObject {
     output = new Array< string >();
     regex_map_filename = "";
     outputProcessor = "StartCommandManagerOutputProcessor";
-    emitter = new Socket();
+    emitter = "EmitterSocket";
     properties = [];
     status = {};
     processedOutput = {};
