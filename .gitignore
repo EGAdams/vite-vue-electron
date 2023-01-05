@@ -10,3 +10,4 @@ src/typescript_source/concrete/config/
 src/typescript_source/docs/
 src/typescript_source/scripts/
 src/typescript_source/config/
+src/typescript_source/concrete/commands/delete_html_logs/delete_html_logs.sh
