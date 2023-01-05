@@ -11,8 +11,8 @@ class OutputProcessor {
     constructor() { console.log( "constructing OutputProcessor..." ); }
 
     async processOutput ( commandObjectArg: ICommandObject, regexArg: IRegex ): Promise< void > {
-        const ConcreteProcessor = await import( "./" + commandObjectArg.outputProcessor );
-        const concreteProcessor = new ConcreteProcessor();
+        const ConcreteProcessor = await import( "." + commandObjectArg.outputProcessor );
+        const concreteProcessor = new ConcreteProcessor.default();
         concreteProcessor.commandObject = commandObjectArg;
         const rawArray = commandObjectArg.output;
         for ( const index in rawArray ) {

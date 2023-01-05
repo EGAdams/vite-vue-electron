@@ -89,18 +89,18 @@ class CommandExecutor {
                 this.commandObject.output = stdout.split( /\r?\n/ );  // populate output here;
                 this.logger?.logUpdate( "commandObject output length in executeAndProcess: " + this.commandObject.output.length );
                 try {
-                    const populator = new ArrayPopulator( new FileManager, "parsingTools/" + this.commandObject.regex_map_filename );
+                    const populator = new ArrayPopulator( new FileManager, this.commandObject.regex_map_filename );
                     const regex = new Regex( populator, this.commandObject.regex_map_filename );
-                    const OutputProcessor = await import( "./" + this.commandObject.outputProcessor );
+                    const OutputProcessor = await import( this.commandObject.outputProcessor );
                     this.logger?.logUpdate( "creating new output processor: " + OutputProcessor.name + "..." );
-                    const outputProcessor = new OutputProcessor();
+                    const outputProcessor = new OutputProcessor.default();
                     outputProcessor.processOutput( this.commandObject, regex );
                 } catch( the_exception: any ) {
                     console.log( the_exception.message );
                     console.log( "*** WARNING: trying to require " + this.commandObject.outputProcessor + ", but it does not exist. ***" );
                     this.logger?.logUpdate( "*** ERROR: " + the_exception.message + " ***" );
-                    setTimeout( function() { process.exit( 0 ); }, 4000 );
                 }
+                setTimeout( function() { process.exit( 0 ); }, 4000 );
             });
         }
     }

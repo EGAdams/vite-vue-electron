@@ -1,5 +1,4 @@
 import ICommandObject from "../../../abstract/ICommandObject";
-import EmitterSocket from "../../EmitterSocket";
 
 /** @class ServerRunningCommand */
 export default class ServerRunningCommand implements ICommandObject {
@@ -16,8 +15,8 @@ export default class ServerRunningCommand implements ICommandObject {
   commandObject = "CommandExecutor";
   output = new Array< string >();
   commandMethod = "execute";
-  regex_map_filename = "commands/server_running/ServerRunningRegex.txt";
-  outputProcessor = "commands/server_running/ServerRunningOutputProcessor";
+  regex_map_filename = "src/typescript_source/concrete/commands/server_running/ServerRunningRegex.txt";
+  outputProcessor = "./commands/server_running/ServerRunningOutputProcessor";
   emitter = "EmitterSocket";
   status = {
     statusBlock: {
