@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ChatGPT Web Application</title>
+  <style>
+    /* Darken the background */
+    body {
+      background-color: #333;
+    }
+    
+    /* Center the interface on the screen */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    /* Make the buttons shiny and metallic */
+    .btn {
+      background-color: #ccc;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-transform: uppercase;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #aaa;
+    }
+    .btn:active {
+      background-color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <textarea id="input"></textarea>
+      <br>
+      <button class="btn" onclick="sendMessage()">Send</button>
+      <br>
+      <textarea id="output"></textarea>
+    </div>
+  </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+
+// Define the ChatGPT class
+class ChatGPT {
+  constructor(apiKey) {
+    this.apiKey = apiKey;
+    this.chatgptEndpoint = "https://api.openai.com/v1/engines/davinci-codex/completions";
+  }
+
+  async sendMessage(prompt, temperature = 0.5, maxTokens = 500) {
+    console.log( "sending prompt: " + prompt + "..." );
+    try {
+      // Make a POST request to the API endpoint
+      const response = await axios.post(this.chatgptEndpoint, {
+        prompt,
+        temperature,
+        max_tokens: maxTokens
+      }, {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${this.apiKey}`
+        }
+      });
+
+      // Return the response message
+      return response.data.choices[0].text;
+    } catch (error) {
+      // Uncle Bob says: "Don't let the error bubble up, handle it here and be specific"
+      if (error.response) {
+        throw new Error(`ChatGPT API error: ${error.response.status} - ${error.response.statusText}`);
+      } else {
+        throw new Error(`ChatGPT API error: ${error.message}`);
+      }
+    }
+  }
+}
+
+// Create an instance of the ChatGPT class
+const chatgpt = new ChatGPT( "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" );
+
+// Define the function to send the message
+function sendMessage() {
+  // Get the message from the textarea
+  const message = document.getElementById("input").value;
+  
+  // Send the message to the ChatGPT API
+  console.log( "calling sending message on object.  message: " + message );
+  document.getElementById( "output" ).innerHTML = "";
+  chatgpt.sendMessage(message)
+    .then(response => {
+      // Do something with the response
+      console.log(response);
+      document.getElementById( "output" ).innerHTML = response;
+    })
+    .catch(error => {
+      console.log("Oh no, something went wrong!", error);
+    });
+}
+</script>
+</html>
