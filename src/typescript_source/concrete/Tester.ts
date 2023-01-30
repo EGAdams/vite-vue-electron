@@ -1,5 +1,5 @@
 /*
- * class Tester
+ * class Tester 
  */
 import FileManager from "./FileManager";
 
@@ -23,7 +23,8 @@ class Tester {
 }
 
 const fileManager = new FileManager();
-const testableObjects = fileManager.populateArray( "C:\\Users\\EG\\Desktop\\2022\\july\\1st_week\\vite-vue-electron\\src\\typescript_source\\concrete\\test_plan.txt" );
+//const testableObjects = fileManager.populateArray( "C:\\Users\\EG\\Desktop\\2022\\july\\1st_week\\vite-vue-electron\\src\\typescript_source\\concrete\\test_plan.txt" );
+const testableObjects = fileManager.populateArray( "src/typescript_source/concrete/test_plan.txt" );
 const tester = new Tester( testableObjects );
 tester.start();
 console.log( "end testing testable objects." );
