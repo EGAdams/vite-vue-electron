@@ -1,5 +1,5 @@
 #
 #
-server_js_size<--*-->^Name: (\w+.*)
+server_running<--*-->(node server.js)
 #
 # end of file

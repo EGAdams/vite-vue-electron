@@ -92,7 +92,7 @@ class CommandExecutor {
                     const populator = new ArrayPopulator( new FileManager, this.commandObject.regex_map_filename );
                     const regex = new Regex( populator, this.commandObject.regex_map_filename );
                     const OutputProcessor = await import( this.commandObject.outputProcessor );
-                    this.logger?.logUpdate( "creating new output processor: " + OutputProcessor.name + "..." );
+                    this.logger?.logUpdate( "creating new output processor: " + OutputProcessor.default.name + "..." );
                     const outputProcessor = new OutputProcessor.default();
                     outputProcessor.processOutput( this.commandObject, regex );
                 } catch( the_exception: any ) {

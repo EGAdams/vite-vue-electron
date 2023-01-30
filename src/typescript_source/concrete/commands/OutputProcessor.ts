@@ -17,7 +17,7 @@ class OutputProcessor {
         const rawArray = commandObjectArg.output;
         for ( const index in rawArray ) {
             const line = rawArray[ index ];
-            console.log( "line: [" + line + "]" );
+            // console.log( "line: [" + line + "]" );
             const matchedRegex: INameRegexPair | boolean = regexArg.matchedString( line );
             if ( typeof matchedRegex != "boolean" ) {
                 if ( matchedRegex.name ) {
