@@ -57,7 +57,7 @@ class ChatGPT {
     this.chatgptEndpoint = "https://api.openai.com/v1/engines/davinci-codex/completions";
   }
 
-  async sendMessage(prompt, temperature = 0.5, maxTokens = 500) {
+  async sendMessage(prompt, temperature = 0.5, maxTokens = 500, model = "text-davinci-003" ) {
     console.log( "sending prompt: " + prompt + "..." );
     try {
       // Make a POST request to the API endpoint
