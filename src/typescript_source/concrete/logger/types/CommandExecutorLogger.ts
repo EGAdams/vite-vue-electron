@@ -1,4 +1,5 @@
 import { MonitoredObject } from "monitored-object-ts";
+import IMonitoredObjectConfig from "../../../abstract/IMonitoredObjectConfig";
 
 /**
  *  @class CommandExecutorLogger

@@ -56,7 +56,7 @@ class Regex {
             const match = line.match( bullet.regex_string ); // creates Regex object
             if ( match ) {
                 const nameRegexPair = {} as INameRegexPair;
-                nameRegexPair.name = match[ 1 ];
+                nameRegexPair.name = bullet.name; // match[ 1 ];
                 nameRegexPair.regex = match;
                 return nameRegexPair;
             }

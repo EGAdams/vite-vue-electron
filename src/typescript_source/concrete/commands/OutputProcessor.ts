@@ -5,10 +5,20 @@ import IRegex from "../../abstract/IRegex";
 import INameRegexPair from "../../abstract/INameRegexPair";
 import Regex from "../Regex";
 import LsCommand from "./ls_command/LsCommand";
+import IMonitoredObject from "../../abstract/IMonitoredObject";
+import LoggerFactory from "../../concrete/logger/LoggerFactory";
 
 /** @class OutputProcessor */
 class OutputProcessor {
-    constructor() { console.log( "constructing OutputProcessor..." ); }
+    logger: IMonitoredObject | undefined;
+    constructor() { console.log( "constructing OutputProcessor..." );
+        this.getMyLogger().then(( loggerArg: any ) => { 
+                this.logger = loggerArg; 
+                this.logger?.logUpdate( this.constructor.name + "Logger constructed." )})}
+                
+    private async getMyLogger() {
+        let logger = await LoggerFactory.getLogger( this.constructor.name + "Logger" );
+        return logger; }
 
     async processOutput ( commandObjectArg: ICommandObject, regexArg: IRegex ): Promise< void > {
         const ConcreteProcessor = await import( "." + commandObjectArg.outputProcessor );
@@ -17,7 +27,7 @@ class OutputProcessor {
         const rawArray = commandObjectArg.output;
         for ( const index in rawArray ) {
             const line = rawArray[ index ];
-            console.log( "line: [" + line + "]" );
+            // console.log( "line: [" + line + "]" );
             const matchedRegex: INameRegexPair | boolean = regexArg.matchedString( line );
             if ( typeof matchedRegex != "boolean" ) {
                 if ( matchedRegex.name ) {
@@ -25,7 +35,7 @@ class OutputProcessor {
                     // it already has output[], just need index into the
                     // raw array and the Regex object that matched.
 
-                    concreteProcessor[ matchedRegex.name ]( matchedRegex, index );
+                    await concreteProcessor[ matchedRegex.name ]( matchedRegex, index );
                 } else {
                     const errmsg = "*** ERROR: Regex object returned a matched string without a name! ***";
                     console.log( errmsg );
