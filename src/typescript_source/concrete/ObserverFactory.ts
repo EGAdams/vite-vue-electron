@@ -1,9 +1,9 @@
 /*
  *  class ObserverFactory
  */
-import IObserver from '../abstract/IObserver';
-import DatabaseObserver from './data/DatabaseObserver';
-import ISubject from '../abstract/ISubject';
+import IObserver from '../the_factory/src/typescript_source/abstract/IObserver';
+import DatabaseObserver from '../the_factory/src/typescript_source/concrete/data/DatabaseObserver';
+import ISubject from '../the_factory/src/typescript_source/abstract/ISubject';
 /**
  *  @description
  * This is a factory class that creates observers.  So far, the only observer

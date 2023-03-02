@@ -9,8 +9,8 @@ import ICommandObject from '../abstract/ICommandObject';
 import { exec } from 'child_process';
 import ICommandFinishedEmitter from '../abstract/ICommandFinishedEmitter';
 import ServerRunningCommand from './commands/server_running/ServerRunningCommand';
-import LoggerFactory from '../concrete/logger/LoggerFactory';
-import IMonitoredObject from "../abstract/IMonitoredObject";
+import LoggerFactory    from "../the_factory/src/typescript_source/concrete/logger/LoggerFactory";
+import IMonitoredObject from "../the_factory/src/typescript_source/abstract/IMonitoredObject";
 
 class CommandExecutor {
     commandObject:          ICommandObject;

@@ -7,8 +7,8 @@
       v-bind:screen_html="screen_html"
     ></log-viewer>
     <monitor-led :monitor_led_data="monitor_led_data"></monitor-led>
-    <button @click="startCommandManager" class="command-manager-button">
-      Start Command Manager
+    <button @click="serverRunningCommand" class="command-manager-button">
+      Start Linux Server
     </button>
   </div>
 </template>
@@ -20,6 +20,7 @@ import MonitorLed from "../components/MonitorLed.vue";
 import StartCommandManager from "../typescript_source/concrete/commands/start_command_manager/StartCommandManager";
 import CommandExecutor from "../typescript_source/concrete/CommandExecutor";
 import ServerLedData from "../typescript_source/concrete/ServerLedData";
+import ServerRunningCommand from "../typescript_source/concrete/commands/server_running/ServerRunningCommand";
 export default defineComponent({
   name: "CommandManagerMonitor",
   components: {
@@ -34,10 +35,11 @@ export default defineComponent({
     };
   },
   methods: {
-    startCommandManager() {
-      this.monitor_led_data.ledText = "starting command manager... ";
-      let executor = new CommandExecutor( new StartCommandManager());
-      executor.executeCommand();
+    serverRunningCommand() {
+      console.log( "server running command..." );
+      this.monitor_led_data.ledText = "server running command... ";
+      let executor = new CommandExecutor( new ServerRunningCommand());
+      executor.execute();
     },
   },
 });

@@ -1,5 +1,5 @@
-import IObserver from "../../abstract/IObserver";
-import ISubject from '../../abstract/ISubject';
+import IObserver from "../../the_factory/src/typescript_source/abstract/IObserver";
+import ISubject from '../../the_factory/src/typescript_source/abstract/ISubject';
 import MonitoredObjectsTableUpdater from './MonitoredObjectsTableUpdater';
 /**
  *

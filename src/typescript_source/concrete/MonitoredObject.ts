@@ -1,7 +1,7 @@
-import ISubject from '../abstract/ISubject';
-import ITestable from '../abstract/ITestable';
+import ISubject from '../the_factory/src/typescript_source/abstract/ISubject';
+import ITestable from '../the_factory/src/typescript_source/abstract/ITestable';
 import ObserverFactory from './ObserverFactory';
-import IObserver from '../abstract/IObserver';
+import IObserver from '../the_factory/src/typescript_source/abstract/IObserver';
 import FreshToolBox from '../concrete/FreshToolBox';
 /**
  *  @class MonitoredObject
